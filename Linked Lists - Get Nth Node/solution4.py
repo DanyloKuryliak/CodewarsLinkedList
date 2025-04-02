@@ -4,14 +4,14 @@ class Node(object):
     def __init__(self, data, next=None):
         self.data = data
         self.next = next
-    
+
 def get_nth(node, index):
-    if node is None:
-        raise Exception("Invalid index")
+    v = -1
+    n = node
+    while n:
+        v += 1
+        if v == index:
+            return n
+        n = n.next
     
-    for i in range(index):
-        node = node.next
-        if node is None:
-            raise Exception("Invalid index")
-    return node
-  
+    raise ValueError
